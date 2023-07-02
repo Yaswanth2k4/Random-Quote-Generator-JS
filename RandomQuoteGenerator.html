@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="RandomQuoteGenerator.css">
+    </head>
+<body>
+
+<header id="header" class="header">Random Quote Generator</header> 
+<div id="bodyCont" class="bodycont">
+    <p id="greeting" class="greeting">
+        <script>
+            const date=new Date();
+            var hours=date.getHours();
+            var minutes=date.getMinutes();
+            if(hours>=6 && hours<=11)
+            {
+                document.getElementById('greeting').innerHTML="Let's start our morning with a new quote";
+            }
+
+            else if(hours>=12 && hours<=17)
+            {
+                document.getElementById('greeting').innerHTML="Let's start our afternoon with a new quote";
+            }
+
+            else if(hours>=18 && hours<=20)
+            {
+                document.getElementById('greeting').innerHTML="Let's start our evening with a new quote";
+            }
+            else
+            {
+                document.getElementById('greeting').innerHTML="Let's start our night with a new quote";
+            }
+        </script>
+    </p>
+    <div id="container" class="container">
+        <div id="quotebox" class="quotebox">
+            <pre id="quote" class="quote">
+                <script>
+                    document.getElementById('quote').innerHTML="Don't let your happiness depend on something"+"\n\n"+
+                    " you may lose"+"\n"+"                                                      -C. S. Lewis"
+                </script>
+            </pre>
+        </div>
+        <button id="button" class="button" onclick="click()" mouseover="mouseover()" mouseout="mouseout()">New Quote</button>
+    </div>
+</div>   
+<script>
+
+const quotes=[
+    "Don't let your happiness depend on something"+"\n\n"+
+    " you may lose"+"\n"+"                                                      -C. S. Lewis",
+    "Amateurs sit and wait for inspiration, the rest"+"\n\n"+
+    "of us just get up and go to work.''"+"\n"+"                                                    – Stephen King",
+    "''Self-awareness and self-love matter. Who we"+"\n\n"+
+     "are is how we lead.''"+"\n"+ "                                                  – Brene Brown",
+    "''All the world's a stage, and all the men and"+"\n\n"+
+     "women merely players.''"+"\n"+"                                       – William Shakespeare",
+     "''Appreciation is a wonderful thing. It makes"+"\n\n"+
+      "what is excellent in others belong to us as well.''"+"\n"+"                                                          – Voltaire",
+      "''That it will never come again is what makes life"+"\n\n"+
+      " so sweet.''"+"\n"+ "                                               – Emily Dickinson",
+    "''The strongest principle of growth lies in the"+"\n\n"+
+     "human choice''"+"\n"+"                                                – George Eliot",
+     "''The most common way people give up their"+"\n\n"+
+     "power is by thinking they don't have any.''"+"\n"+"                                                   – Alice Walker",
+    "''Focus more on your desire than on your doubt,"+"\n\n"+
+    "and the dream will take care of itself.''"+"\n"+"                                                      – Mark Twain",
+    "To live is the rarest thing in the world. Most"+"\n\n"+
+    "people exist, that is all.''"+"\n"+"                                               – Oscar Wilde"
+];
+
+const colors=["green","lightblue","orange","violet","SlateBlue","DodgerBlue","tomato","red","olive","cadetblue"];
+
+var rand=0;
+
+
+
+button.addEventListener('mouseover',function mouseover(){
+    button.className='buttonOver';
+});
+button.addEventListener('mouseout',function mouseout(){
+    button.className='button';
+});
+container.appendChild(button);
+function click(){
+
+    rand=Math.floor(Math.random()*10);
+    document.getElementById('quote').innerHTML=quotes[rand];
+    document.getElementById('quote').style.color=colors[rand];
+
+    document.getElementById('button').addEventListener('mouseover',function(){
+        document.getElementById('button').style.backgroundColor='black';
+    });
+
+    document.getElementById('button').addEventListener('mouseout',function(){
+        document.getElementById('button').style.backgroundColor=colors[rand];
+    });
+    document.getElementById('button').style.backgroundColor=colors[rand];
+    document.getElementById('bodyCont').style.backgroundColor=colors[rand];
+    document.getElementById('quotebox').appendChild(document.getElementById('quote'));
+}
+document.getElementById('button').addEventListener("click",click);
+</script>
+</body>
+</html>
