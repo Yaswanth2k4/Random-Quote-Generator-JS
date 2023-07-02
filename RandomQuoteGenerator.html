@@ -36,8 +36,9 @@
         <div id="quotebox" class="quotebox">
             <pre id="quote" class="quote">
                 <script>
-                    document.getElementById('quote').innerHTML="Don't let your happiness depend on something"+"\n\n"+
-                    " you may lose"+"\n"+"                                                      -C. S. Lewis"
+                    document.getElementById('quote').innerHTML="''Don't let your happiness depend on something"+"\n\n"+
+                    " you may lose''"+"\n"+"                                                      - C. S. Lewis"
+                    document.getElementById('quote').style.color='rgb(210, 194, 47)';
                 </script>
             </pre>
         </div>
@@ -47,9 +48,9 @@
 <script>
 
 const quotes=[
-    "Don't let your happiness depend on something"+"\n\n"+
-    " you may lose"+"\n"+"                                                      -C. S. Lewis",
-    "Amateurs sit and wait for inspiration, the rest"+"\n\n"+
+    "''Don't let your happiness depend on something"+"\n\n"+
+    " you may lose''"+"\n"+"                                                      -C. S. Lewis",
+    "''Amateurs sit and wait for inspiration, the rest"+"\n\n"+
     "of us just get up and go to work.''"+"\n"+"                                                    – Stephen King",
     "''Self-awareness and self-love matter. Who we"+"\n\n"+
      "are is how we lead.''"+"\n"+ "                                                  – Brene Brown",
@@ -69,7 +70,8 @@ const quotes=[
     "people exist, that is all.''"+"\n"+"                                               – Oscar Wilde"
 ];
 
-const colors=["green","lightblue","orange","violet","SlateBlue","DodgerBlue","tomato","red","olive","cadetblue"];
+const colors=["#ff3300","#3366cc","#ff9900","#6600cc","#339933","DodgerBlue","tomato","red","olive","cadetblue"];
+const bgcolors=['#ffc2b3',"#c2d1f0","#ffe0b3","#d9b3ff","#c6ecc6","#b3d9ff","#ffbeb3","#ffb3b3","#ffffb3"," #cfe2e2"];
 
 var rand=0;
 
@@ -97,6 +99,8 @@ function click(){
     });
     document.getElementById('button').style.backgroundColor=colors[rand];
     document.getElementById('bodyCont').style.backgroundColor=colors[rand];
+    document.getElementById('quotebox').style.backgroundColor=bgcolors[rand];
+    document.getElementById('container').style.backgroundColor=bgcolors[rand];
     document.getElementById('quotebox').appendChild(document.getElementById('quote'));
 }
 document.getElementById('button').addEventListener("click",click);
